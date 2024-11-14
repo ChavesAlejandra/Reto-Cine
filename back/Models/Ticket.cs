@@ -2,7 +2,9 @@ namespace Models;
 
 public class Ticket
 {
-    public int _id { set; get; }
+    private int _id { set; get; }
+
+    public string _shownId { set; get; }
 
     public int _room { set; get; }
 
@@ -12,9 +14,10 @@ public class Ticket
 
     public Ticket () {}
 
-    public Ticket (int id, int room, Session session, Seat seat)
+    public Ticket (int room, Session session, Seat seat)
     {
-        _id = id;
+        _id++;
+        _shownId = String.Concat('T', _id);
         _room = room;
         _session = session;
         _seat = seat;
@@ -22,6 +25,6 @@ public class Ticket
 
         private void ShowSeatData ()
     {
-        Console.WriteLine("Seat:\n{".$"\n\tId: { _id }\n\tRoom: { _room }\n\tSession: { _session }\n\tSeat: { _seat }\n"."}");
+        Console.WriteLine("Seat:\n{" + $"\n\tId: { _shownId }\n\tRoom: { _room }\n\tSession: { _session }\n\tSeat: { _seat }\n" + "}");
     }
 }

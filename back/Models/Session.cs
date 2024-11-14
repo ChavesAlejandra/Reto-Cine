@@ -2,6 +2,7 @@ namespace Models;
 
 public class Session
 {
+    public int _id { set; get; }
     public string _date { set; get; } // format --> 'dd/mm/yyyy'
 
     public string _hour { set; get; } // format --> 'hh/mm/ss'
@@ -13,8 +14,9 @@ public class Session
     public bool _full { set; get; }
 
     public Session () {}
-    public Session (string date, string hour, string room, Seat[] seats, string full)
+    public Session (string date, string hour, int room, Seat[] seats, bool full)
     {
+        _id++;
         _date = date;
         _hour = hour;
         _room = room;
@@ -24,9 +26,8 @@ public class Session
 
     private void ShowSeatData ()
     {
-        string fullShow = "";
-        _full ? fullShow = "full" : fullShow = "not full";
+        string fullShow = fullShow = _full ? "full" : "not full";
 
-        Console.WriteLine("Seat:\n{".$"\n\tDate: { _date }\n\tHour: { _hour }\n\tRoom: { _room }\n\tSeats: { _seats }\n\tStatus: { fullShow }\n"."}");
+        Console.WriteLine("Seat:\n{" + $"\n\tId: { _id }\n\tDate: { _date }\n\tHour: { _hour }\n\tRoom: { _room }\n\tSeats: { _seats }\n\tStatus: { fullShow }\n" + "}");
     }
 }

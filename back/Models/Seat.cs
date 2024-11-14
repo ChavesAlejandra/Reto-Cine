@@ -28,6 +28,6 @@ public class Seat
 
     private void ShowSeatData ()
     {
-        Console.WriteLine("Seat:{".$"\n\tId: { _id }\n\tType: { _type }\n\tPrice: { _price }\n\tOccupied: { _occupied }\n"."}");
+        Console.WriteLine("Seat:{"+$"\n\tId: { _id }\n\tType: { _type }\n\tPrice: { _price }\n\tOccupied: { _occupied }\n"+"}");
     }
 }
