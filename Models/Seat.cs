@@ -1,4 +1,4 @@
-namespace back.Models;
+namespace Models;
 
 public enum SeatTypes
 {
@@ -24,5 +24,10 @@ public class Seat
         _type = type;
         _price = price;
         _occupied = occupied;
+    }
+
+    private void ShowSeatData ()
+    {
+        Console.WriteLine("Seat:{".$"\n\tId: { _id }\n\tType: { _type }\n\tPrice: { _price }\n\tOccupied: { _occupied }\n"."}");
     }
 }

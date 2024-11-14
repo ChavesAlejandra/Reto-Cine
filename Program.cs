@@ -1,4 +1,4 @@
-using back.Controllers;
+using Controllers;
 using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);

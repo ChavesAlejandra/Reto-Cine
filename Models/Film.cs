@@ -1,4 +1,4 @@
-namespace back.Models;
+namespace Models;
 
 public enum FilmGenres
 {
@@ -18,15 +18,15 @@ public enum FilmAgeRestrictions
 
 public class Film
 {
-    string _title { set; get; }
+    public string _title { set; get; }
 
-    string _director { set; get; } // full name
+    public string _director { set; get; } // full name
 
-    int _duration { set; get; } // in seconds
+    public int _duration { set; get; } // in seconds
 
-    int _ageRestriction { set; get; }
+    public int _ageRestriction { set; get; }
 
-    string[] _genres { set; get; }
+    public string[] _genres { set; get; }
 
     public Film () {}
     public Film (string title, string director, int duration, int ageRestriction, string[] genres)
@@ -36,5 +36,10 @@ public class Film
         _duration = duration;
         _ageRestriction = ageRestriction;
         _genres = genres;
+    }
+
+    private void ShowSeatData ()
+    {
+        Console.WriteLine("Seat:\n{".$"\n\tTitle: { _title }\n\tDirector: { _director }\n\tDuration: { _duration }\n\tAge Restriction: { _ageRestriction }\n\tGenres: { _genres }\n"."}");
     }
 }
