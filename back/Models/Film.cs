@@ -1,3 +1,5 @@
+using Microsoft.VisualBasic;
+
 namespace back.Models;
 
 public enum FilmGenres
@@ -18,6 +20,8 @@ public enum FilmAgeRestrictions
 
 public class Film
 {
+
+    private static int count = 1;
     public int _id { set; get; }
     public string _title { set; get; }
 
@@ -28,16 +32,18 @@ public class Film
     public int _ageRestriction { set; get; }
 
     public string[] _genres { set; get; }
+    public string _filmImg { set; get; }
 
     public Film () {}
-    public Film (string title, string director, int duration, int ageRestriction, string[] genres)
+    public Film (string title, string director, int duration, int ageRestriction, string[] genres, string filmImg)
     {
-        _id++;
+        _id = count++;
         _title = title;
         _director = director;
         _duration = duration;
         _ageRestriction = ageRestriction;
         _genres = genres;
+        _filmImg = filmImg;
     }
 
     private void ShowSeatData ()

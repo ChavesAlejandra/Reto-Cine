@@ -13,6 +13,7 @@ public enum Rooms
 
 public class Session
 {
+    private static int count = 1;
     public int _id { set; get; }
     public string _date { set; get; } // format --> 'dd/mm/yyyy'
 
@@ -28,7 +29,7 @@ public class Session
     public Session () {}
     public Session (string date, string hour, Film film, string room, List<Seat> seats, bool full)
     {
-        _id++;
+        _id  = count++;
         _date = date;
         _hour = hour;
         _film = film;

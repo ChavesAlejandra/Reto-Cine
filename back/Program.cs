@@ -22,8 +22,6 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-FilmController.DataGen();
-
 var app = builder.Build();
 
 // Configurar el pipeline de solicitud HTTP

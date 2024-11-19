@@ -15,8 +15,8 @@ public class FilmController : ControllerBase
     {
         List<Film> genFilms =
         [
-            new Film("Coraline", "full name", 150, (int) FilmAgeRestrictions.overTwelve, [ Enum.GetName(FilmGenres.animation), Enum.GetName(FilmGenres.horror) ]),
-            new Film("Space Jam", "full name", 160, (int) FilmAgeRestrictions.allPublic, [ Enum.GetName(FilmGenres.animation) ])
+            new Film("Coraline", "full name", 150, (int) FilmAgeRestrictions.overTwelve, [ Enum.GetName(FilmGenres.animation), Enum.GetName(FilmGenres.horror) ], "Coraline.jpg"),
+            new Film("Space Jam", "full name", 160, (int) FilmAgeRestrictions.allPublic, [ Enum.GetName(FilmGenres.animation) ], "SpaceJam.jpg")
         ];
 
         return genFilms;
