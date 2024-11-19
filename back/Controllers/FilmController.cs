@@ -9,12 +9,17 @@ namespace back.Controllers;
 
 public class FilmController : ControllerBase
 {
-    private static List<Film> films = new List<Film>();
+    private static List<Film> films = DataGen();
 
-    public static void DataGen ()
+    public static List<Film> DataGen ()
     {
-        films.Add(new Film("Coraline", "full name", 150, (int) FilmAgeRestrictions.overTwelve, [ Enum.GetName(FilmGenres.animation), Enum.GetName(FilmGenres.horror) ]));
-        films.Add(new Film("Space Jam", "full name", 160, (int) FilmAgeRestrictions.allPublic, [ Enum.GetName(FilmGenres.animation) ]));
+        List<Film> genFilms =
+        [
+            new Film("Coraline", "full name", 150, (int) FilmAgeRestrictions.overTwelve, [ Enum.GetName(FilmGenres.animation), Enum.GetName(FilmGenres.horror) ]),
+            new Film("Space Jam", "full name", 160, (int) FilmAgeRestrictions.allPublic, [ Enum.GetName(FilmGenres.animation) ])
+        ];
+
+        return genFilms;
     }
 
     [HttpGet] // decorator

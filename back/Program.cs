@@ -1,4 +1,4 @@
-using Controllers;
+using back.Controllers;
 using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,8 +10,8 @@ builder.Services.AddCors(options =>
         policy =>
         {
             policy.WithOrigins(
-                "https://localhost:7264",  // Ajusta la URL si es necesario
-                "http://127.0.0.1:5500")   // Ajusta la URL si es necesario
+                "https://localhost:7264",
+                "http://127.0.0.1:5500")
                 .AllowAnyHeader()
                 .AllowAnyMethod();
         });

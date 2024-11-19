@@ -1,24 +1,37 @@
+using back.Models;
+
 namespace Models;
+
+public enum Rooms
+{
+    R1,
+    R2,
+    R3,
+    R4,
+    R5
+}
 
 public class Session
 {
     public int _id { set; get; }
     public string _date { set; get; } // format --> 'dd/mm/yyyy'
 
-    public string _hour { set; get; } // format --> 'hh/mm/ss'
+    public string _hour { set; get; } // format --> 'hh:mm'
+    public Film _film { set; get; }
 
-    public int _room { set; get; }
+    public string _room { set; get; }
 
-    public Seat[] _seats { set; get; }
+    public List<Seat> _seats { set; get; }
 
     public bool _full { set; get; }
 
     public Session () {}
-    public Session (string date, string hour, int room, Seat[] seats, bool full)
+    public Session (string date, string hour, Film film, string room, List<Seat> seats, bool full)
     {
         _id++;
         _date = date;
         _hour = hour;
+        _film = film;
         _room = room;
         _seats = seats;
         _full = full;
@@ -26,7 +39,7 @@ public class Session
 
     private void ShowSeatData ()
     {
-        string fullShow = fullShow = _full ? "full" : "not full";
+        string fullShow = _full ? "full" : "not full";
 
         Console.WriteLine("Seat:\n{" + $"\n\tId: { _id }\n\tDate: { _date }\n\tHour: { _hour }\n\tRoom: { _room }\n\tSeats: { _seats }\n\tStatus: { fullShow }\n" + "}");
     }

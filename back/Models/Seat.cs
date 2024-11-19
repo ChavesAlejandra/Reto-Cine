@@ -16,14 +16,16 @@ public class Seat
     public float _price { set; get; }
 
     public bool _occupied { set; get; }
+    public string _img { set; get; }
 
     public Seat () {}
-    public Seat (string id, string type, float price, bool occupied)
+    public Seat (string id, string type, float price, bool occupied, string img)
     {
         _id = id;
         _type = type;
         _price = price;
         _occupied = occupied;
+        _img = img;
     }
 
     private void ShowSeatData ()
