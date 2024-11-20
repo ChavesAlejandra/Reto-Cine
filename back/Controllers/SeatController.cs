@@ -87,7 +87,7 @@ public class SeatController : ControllerBase
             new Seat("I8", Enum.GetName(SeatTypes.normal), (float) 7.50, false, "seat_blanco.png"),
             new Seat("I9", Enum.GetName(SeatTypes.normal), (float) 7.50, false, "seat_blanco.png"),
             new Seat("I10", Enum.GetName(SeatTypes.normal), (float) 7.50, false, "seat_blanco.png"),
-            new Seat("I11", Enum.GetName(SeatTypes.normal), (float) 7.50, false, "seat_blanco.png"),
+            new Seat("I11", Enum.GetName(SeatTypes.normal), (float) 7.50, false, "seat_blanco.png")
         ];
 
         return genSeats;
