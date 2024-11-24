@@ -30,19 +30,24 @@ public class Film
 
     public int _duration { set; get; } // in minutes
 
+    public string _description { set; get; }
+
     public int _ageRestriction { set; get; }
+
     public string _premiereYear { set; get; }
 
     public string[] _genres { set; get; }
+
     public string _filmImg { set; get; }
 
     public Film () {}
-    public Film (string title, string director, int duration, int ageRestriction, string premiereYear, string[] genres, string filmImg)
+    public Film (string title, string director, int duration, string description, int ageRestriction, string premiereYear, string[] genres, string filmImg)
     {
         _id = count++;
         _title = title;
         _director = director;
         _duration = duration;
+        _description = description;
         _ageRestriction = ageRestriction;
         _premiereYear = premiereYear;
         _genres = genres;
