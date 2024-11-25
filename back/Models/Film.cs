@@ -6,7 +6,7 @@ public enum FilmGenres
 {
     horror,
     romantic,
-    scienceFiction,
+    sciFi,
     animation
 }
 
