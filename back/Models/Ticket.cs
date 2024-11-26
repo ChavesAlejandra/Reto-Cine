@@ -1,3 +1,5 @@
+using back.Models;
+
 namespace Models;
 
 public class Ticket
@@ -12,19 +14,22 @@ public class Ticket
 
     public Seat _seat { set; get; }
 
+    public Menu _menu { set; get;}
+
     public Ticket () {}
 
-    public Ticket (int room, Session session, Seat seat)
+    public Ticket (int room, Session session, Seat seat, Menu menu)
     {
         _id++;
         _shownId = String.Concat('T', _id);
         _room = room;
         _session = session;
         _seat = seat;
+        _menu = menu;
     }
 
         private void ShowSeatData ()
     {
-        Console.WriteLine("Seat:\n{" + $"\n\tId: { _shownId }\n\tRoom: { _room }\n\tSession: { _session }\n\tSeat: { _seat }\n" + "}");
+        Console.WriteLine("Seat:\n{" + $"\n\tId: { _shownId }\n\tRoom: { _room }\n\tSession: { _session }\n\tSeat: { _seat }\n\tMenu: { _menu }\n" + "}");
     }
 }

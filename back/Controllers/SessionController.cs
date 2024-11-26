@@ -23,4 +23,16 @@ public class SessionController : ControllerBase
 
     [HttpGet]
     public ActionResult<IEnumerable<Session>> GetSessions() { return Ok(sessions); }
+
+    [HttpGet("film/{film}")]
+    public ActionResult<IEnumerable<Session>> GetSessionsSpecific(string film)
+    {
+        List<Session> filteredSessions = new List<Session>();
+        sessions.ForEach(el =>
+        {
+            if (el._film._title.ToLower().Contains(film.ToLower())) { filteredSessions.Add(el); }
+        });
+        if (filteredSessions.ToArray().Length == 0) { return NotFound(); }
+        return Ok(filteredSessions);
+    }
 }
