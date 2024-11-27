@@ -28,7 +28,7 @@ public class Ticket
         _menu = menu;
     }
 
-        private void ShowSeatData ()
+    public void ShowData ()
     {
         Console.WriteLine("Seat:\n{" + $"\n\tId: { _shownId }\n\tRoom: { _room }\n\tSession: { _session }\n\tSeat: { _seat }\n\tMenu: { _menu }\n" + "}");
     }

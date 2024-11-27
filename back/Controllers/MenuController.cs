@@ -8,7 +8,7 @@ namespace back.Controllers;
 
 public class MenuController : ControllerBase
 {
-    private static List<Menu> menus = DataGen();
+    public static List<Menu> menus = DataGen();
 
     public static List<Menu> DataGen ()
     {

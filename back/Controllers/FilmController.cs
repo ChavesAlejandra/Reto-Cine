@@ -9,7 +9,7 @@ namespace back.Controllers;
 
 public class FilmController : ControllerBase
 {
-    private static List<Film> films = DataGen();
+    public static List<Film> films = DataGen();
 
     public static List<Film> DataGen ()
     {

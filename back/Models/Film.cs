@@ -52,8 +52,8 @@ public class Film
         _filmImg = filmImg;
     }
 
-    private void ShowSeatData ()
+    public void ShowData ()
     {
-        Console.WriteLine("Seat:\n{" + $"\n\tId: { _id }\n\tTitle: { _title }\n\tDirector: { _director }\n\tDuration: { _duration }\n\tAge Restriction: { _ageRestriction }\n\tPremiere Date: { _premiereYear }\n\tGenres: { _genres }\n" + "}");
+        Console.WriteLine("Film:\n{" + $"\n\tId: { _id }\n\tTitle: { _title }\n\tDirector: { _director }\n\tDuration: { _duration }\n\tAge Restriction: { _ageRestriction }\n\tPremiere Date: { _premiereYear }\n\tGenres: { _genres }\n" + "}");
     }
 }

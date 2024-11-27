@@ -28,7 +28,7 @@ public class Seat
         _img = img;
     }
 
-    private void ShowSeatData ()
+    public void ShowData ()
     {
         Console.WriteLine("Seat:{"+$"\n\tId: { _id }\n\tType: { _type }\n\tPrice: { _price }\n\tOccupied: { _occupied }\n"+"}");
     }

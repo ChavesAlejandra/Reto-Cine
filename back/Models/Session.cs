@@ -38,10 +38,10 @@ public class Session
         _full = full;
     }
 
-    private void ShowSeatData ()
+    public void ShowData ()
     {
         string fullShow = _full ? "full" : "not full";
 
-        Console.WriteLine("Seat:\n{" + $"\n\tId: { _id }\n\tDate: { _date }\n\tHour: { _hour }\n\tRoom: { _room }\n\tSeats: { _seats }\n\tStatus: { fullShow }\n" + "}");
+        Console.WriteLine("Session:\n{" + $"\n\tId: { _id }\n\tDate: { _date }\n\tHour: { _hour }\n\tRoom: { _room }\n\tSeats: { _seats }\n\tStatus: { fullShow }\n" + "}");
     }
 }

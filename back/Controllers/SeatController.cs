@@ -9,7 +9,7 @@ namespace back.Controllers;
 
 public class SeatController : ControllerBase
 {
-    private static List<Seat> seats = DataGen();
+    public static List<Seat> seats = DataGen();
 
     public static List<Seat> DataGen()
     {

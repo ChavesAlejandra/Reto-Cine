@@ -21,7 +21,7 @@ public class Menu
         _img = img;
     }
 
-    private void ShowSeatData ()
+    public void ShowData ()
     {
         Console.WriteLine("Seat:\n{" + $"\n\tId: { _id }\n\tTitle: { _title }\n\tDirector: { _price }\n\tDuration: { _img }\n" + "}");
     }

@@ -9,7 +9,7 @@ namespace back.Controllers;
 
 public class SessionController : ControllerBase
 {
-    private static List<Session> sessions = DataGen(FilmController.DataGen(), SeatController.DataGen());
+    public static List<Session> sessions = DataGen(FilmController.films, SeatController.seats);
 
     public static List<Session> DataGen(List<Film> parFilms, List<Seat> parSeats)
     {
