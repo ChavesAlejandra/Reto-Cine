@@ -15,9 +15,7 @@ public class Session
 {
     private static int count = 1;
     public int _id { set; get; }
-    public string _date { set; get; } // format --> 'dd/mm/yyyy'
-
-    public string _hour { set; get; } // format --> 'hh:mm'
+    public DateTime _date { set; get; }
     public Film _film { set; get; }
 
     public string _room { set; get; }
@@ -27,11 +25,10 @@ public class Session
     public bool _full { set; get; }
 
     public Session () {}
-    public Session (string date, string hour, Film film, string room, List<Seat> seats, bool full)
+    public Session (DateTime date, Film film, string room, List<Seat> seats, bool full)
     {
         _id  = count++;
         _date = date;
-        _hour = hour;
         _film = film;
         _room = room;
         _seats = seats;
@@ -42,6 +39,6 @@ public class Session
     {
         string fullShow = _full ? "full" : "not full";
 
-        Console.WriteLine("Session:\n{" + $"\n\tId: { _id }\n\tDate: { _date }\n\tHour: { _hour }\n\tRoom: { _room }\n\tSeats: { _seats }\n\tStatus: { fullShow }\n" + "}");
+        Console.WriteLine("Session:\n{" + $"\n\tId: { _id }\n\tDate: { _date }\n\tRoom: { _room }\n\tSeats: { _seats }\n\tStatus: { fullShow }\n" + "}");
     }
 }
