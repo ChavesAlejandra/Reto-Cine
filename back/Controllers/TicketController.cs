@@ -14,6 +14,16 @@ public class TicketController : ControllerBase
     [HttpGet]
     public ActionResult<IEnumerable<Ticket>> GetTickets () { return Ok(tickets); }
 
+    [HttpGet("last")]
+    public ActionResult<Ticket> GetTicketLast ()
+    {
+        Ticket lastTicket = new Ticket();
+        tickets.ForEach(el => { lastTicket = el; });
+
+        if(lastTicket == null) {return NotFound();}
+        return Ok(lastTicket);
+    }
+
     [HttpGet("id/{id}")]
     public ActionResult<IEnumerable<Ticket>> GetTicketId (int id)
     {
@@ -28,10 +38,10 @@ public class TicketController : ControllerBase
     }
 
     [HttpPost("session/{idSession}")]
-    public ActionResult<Ticket> PostSeat (int idSession, [FromBody] Seat seat)
+    public ActionResult<Ticket> PostSeat (int idSession, [FromBody] List<Seat> seats)
     {
         Session session = SessionController.sessions.Find(co => co._id == idSession);
-        Ticket ticket = new Ticket(session._room, session, seat);
+        Ticket ticket = new Ticket(session._room, session, seats);
         tickets.Add(ticket);
 
         return ticket;

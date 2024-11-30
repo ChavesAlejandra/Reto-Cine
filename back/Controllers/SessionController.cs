@@ -114,6 +114,10 @@ public class SessionController : ControllerBase
         if (seat._occupied == true) { seat._img = "seat_taken.png"; }
         else { seat._img = "seat_blanco.png"; }
 
+        int count = 0;
+        session._seats.ForEach(el => { if (el._occupied) { count++; } });
+        if (count == 72) { session._full = true; }
+
         return seat;
     }
 }
