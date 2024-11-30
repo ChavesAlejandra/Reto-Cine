@@ -4,25 +4,27 @@ public class Menu
 {
 
     private static int count = 1;
+
     public int _id { set; get; }
-    public string _title { set; get; }
 
-    public int _price { set; get; } // full name
+    public string _name { set; get; }
 
-    public string _img { set; get; } // in minutes
+    public int _price { set; get; }
+
+    public string _img { set; get; }
 
 
-    public Menu() {}
-    public Menu(string title, int price, string img)
+    public Menu () {}
+    public Menu (string name, int price, string img)
     {
         _id = count++;
-        _title = title;
+        _name = name;
         _price = price;
         _img = img;
     }
 
     public void ShowData ()
     {
-        Console.WriteLine("Seat:\n{" + $"\n\tId: { _id }\n\tTitle: { _title }\n\tDirector: { _price }\n\tDuration: { _img }\n" + "}");
+        Console.WriteLine("Menu:\n{" + $"\n\tId: { _id }\n\tName: { _name }\n\tPrice: { _price }\n\tImg: { _img }\n" + "}");
     }
 }

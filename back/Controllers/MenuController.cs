@@ -18,7 +18,7 @@ public class MenuController : ControllerBase
             new Menu("Menu Doble Coca-Cola", 16, "MenuDobleCola.jpg"),
             new Menu("Menu Doble Pop Corn", 19, "MenuDoblePopCorn.jpg"),
             new Menu("Pop Corn Normal", 6, "MenuPopCorn.jpg"),
-            new Menu("Coca-Cola", 3, "MenuCola")
+            new Menu("Coca-Cola", 3, "MenuCola.jpg")
         ];
 
         return genMenus;
@@ -28,7 +28,7 @@ public class MenuController : ControllerBase
     public ActionResult<IEnumerable<Menu>> GetMenus(){ return Ok(menus);}
 
     [HttpGet("id/{id}")]
-    public ActionResult<IEnumerable<Menu>> GetMenusId (string id)
+    public ActionResult<IEnumerable<Menu>> GetMenusId (int id)
     {
         List<Menu> filteredMenus = new List<Menu>();
         menus.ForEach(el => //el = Element

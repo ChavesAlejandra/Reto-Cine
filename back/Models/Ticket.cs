@@ -15,7 +15,7 @@ public class Ticket
 
     public List<Seat> _seats { set; get; }
 
-    public Menu _menu { set; get;}
+    public List<Menu> _menus { set; get;}
 
     public Ticket () {}
         public Ticket (string room, Session session, List<Seat> seats)
@@ -27,18 +27,18 @@ public class Ticket
         _seats = seats;
     }
 
-    public Ticket (string room, Session session, List<Seat> seats, Menu menu)
+    public Ticket (string room, Session session, List<Seat> seats, List<Menu> menus)
     {
         _id++;
         _shownId = String.Concat('T', _id);
         _room = room;
         _session = session;
         _seats = seats;
-        _menu = menu;
+        _menus = menus;
     }
 
     public void ShowData ()
     {
-        Console.WriteLine("Ticket:\n{" + $"\n\tId: { _shownId }\n\tRoom: { _room }\n\tSession: { _session }\n\tSeat: { _seats }\n\tMenu: { _menu }\n" + "}");
+        Console.WriteLine("Ticket:\n{" + $"\n\tId: { _shownId }\n\tRoom: { _room }\n\tSession: { _session }\n\tSeat: { _seats }\n\tMenus: { _menus }\n" + "}");
     }
 }

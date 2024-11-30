@@ -47,12 +47,12 @@ public class TicketController : ControllerBase
         return ticket;
     }
     
-    [HttpPut("id/{id}/menu/{menu}")]
-        public ActionResult<Ticket> PutTicket (int id, Menu menu)
+    [HttpPut("id/{id}/menus")]
+        public ActionResult<Ticket> PutTicket (int id, [FromBody] List<Menu> menus)
     {
         Ticket ticket = tickets.Find(co => co._id == id);
 
-        ticket._menu = menu;
+        ticket._menus = menus;
 
         return ticket;
     }
