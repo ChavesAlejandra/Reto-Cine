@@ -56,4 +56,17 @@ public class TicketController : ControllerBase
 
         return ticket;
     }
+
+        [HttpPut("id/{id}/user")]
+        public ActionResult<Ticket> PutTicket (int id, [FromBody] string user)
+    {
+        Ticket ticket = tickets.Find(co => co._id == id);
+
+        ticket._userFirstName = user.Split('-')[0];
+        ticket._userLastName = user.Split('-')[1];
+        ticket._userIban = user.Split('-')[2];
+        ticket._userCsv = Convert.ToInt32(user.Split('-')[3]);
+
+        return ticket;
+    }
 }
