@@ -14,7 +14,7 @@ public class SeatController : ControllerBase
     public static List<List<Seat>> DataGen()
     {
         List<List<Seat>> genSeats = new List<List<Seat>>();
-        for (int count = 0; count < FilmController.films.Count; count++)
+        for (int count = 0; count < FilmController.films.Count()*2; count++)
         {
             genSeats.Add(
             [
