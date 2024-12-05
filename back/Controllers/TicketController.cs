@@ -13,17 +13,7 @@ public class TicketController : ControllerBase
 
     [HttpGet]
     public ActionResult<IEnumerable<Ticket>> GetTickets () { return Ok(tickets); }
-
-    [HttpGet("last")]
-    public ActionResult<Ticket> GetTicketLast ()
-    {
-        Ticket lastTicket = new Ticket();
-        tickets.ForEach(el => { lastTicket = el; });
-
-        if(lastTicket == null) {return NotFound();}
-        return Ok(lastTicket);
-    }
-
+    
     [HttpGet("id/{id}")]
     public ActionResult<IEnumerable<Ticket>> GetTicketId (int id)
     {
