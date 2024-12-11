@@ -120,4 +120,20 @@ public class SessionController : ControllerBase
 
         return seat;
     }
+
+    [HttpPut("id/{id}/seat/{seatId}/occupied/{occ}/img/{img}")]
+    public ActionResult<Seat> PutSeatWithImage (int id, string seatId, bool occ, string img)
+    {
+        Session session = sessions.Find(co => co._id == id);
+        Seat seat = session._seats.Find(co => co._id == seatId);
+
+        seat._occupied = occ;
+        seat._img = img+".png";
+
+        int count = 0;
+        session._seats.ForEach(el => { if (el._occupied) { count++; } });
+        if (count == 72) { session._full = true; }
+
+        return seat;
+    }
 }

@@ -14,6 +14,15 @@ public class TicketController : ControllerBase
     [HttpGet]
     public ActionResult<IEnumerable<Ticket>> GetTickets () { return Ok(tickets); }
     
+    [HttpGet("last")] /* TEMPORAL */
+    public ActionResult<IEnumerable<Ticket>> GetTicketLast ()
+    {
+        Ticket ticket = new Ticket();
+        tickets.ForEach(el =>  { ticket = el; });
+
+        return Ok(ticket);
+    }
+    
     [HttpGet("id/{id}")]
     public ActionResult<IEnumerable<Ticket>> GetTicketId (int id)
     {
@@ -47,7 +56,7 @@ public class TicketController : ControllerBase
         return ticket;
     }
 
-        [HttpPut("id/{id}/user")]
+    [HttpPut("id/{id}/user")]
         public ActionResult<Ticket> PutTicket (int id, [FromBody] string user)
     {
         Ticket ticket = tickets.Find(co => co._id == id);
