@@ -78,5 +78,18 @@ public class FilmController : ControllerBase
         if (filteredFilms.ToArray().Length == 0) { return NotFound(); }
         return Ok(filteredFilms);
     }
+
+    [HttpPut("{film}/comentarios")]
+    public ActionResult<Film> PutComentario (int id, [FromBody] string comentario)
+    {
+        Film film = films.Find(co => co._id == id);
+
+        film._personName = comentario.Split('-')[0];
+        film._comentario = comentario.Split('-')[1];
+        film._filmStars = Convert.ToInt32(comentario.Split('-')[2]);
+
+        return film;
+
+    }
 }
 
